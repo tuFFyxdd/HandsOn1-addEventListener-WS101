@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM addEventListener</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        html {
+            background: url(bg1.jpg)center center fixed;
+            background-size: cover;
+        }
+        body {
+            margin: 0;
+        }
+        .wrapper {
+            max-height: 100%;
+            max-width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .content {
+            border: none;
+            height: 250px;
+            flex-direction: column;
+            width: 900px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            background-color: rgba(0, 0, 0, 0.551);
+            backdrop-filter: blur(1px); 
+            color: #ecb172;
+            font-size: 18px;
+        }
+        #btn1, #btn2, #btn3 {
+            padding: 8px;
+            margin: 5px;
+            width: 100px;
+            border-radius: 4px;
+            border: none;
+            background-color: #F9EFDB;
+            font-size: 15px;
+            transition: height 0.5s ease, width .5s, background-color 1s ease;
+        }
+        #btn1:hover, #btn2:hover, #btn3:hover {
+            background-color: #EBD9B4;
+            border-radius: 20px;
+            width: 150px;
+            color: #46C2CB;
+            font-weight: bold;
+            letter-spacing: 1px; 
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                padding-top: 0;
+            }
+            .header {
+                text-align: center;
+                padding-bottom: 15px;
+            }
+            .content {
+                height: 290px;
+            }
+            .buttons {
+                padding-bottom: 50px;
+            }
+        }   
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <h1 class="header">JavaScript addEventListener() <br>Hands-On</h1>
+
+            <div class="buttons">
+                <button id="btn1">Button 1</button>
+                <button id="btn2">Button 2</button>
+                <button id="btn3">Button 3</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function() {
+            Perform("Button 1");
+        });
+
+        document.getElementById("btn2").addEventListener("click", function() {
+            Perform("Button 2");
+        });
+
+        document.getElementById("btn3").addEventListener("click", function() {
+            Perform("Button 3");
+        });
+
+        function Perform(buttonNumber) {
+            alert(buttonNumber + " was clicked!");
+        }
+    </script>
+</body>
+</html>
